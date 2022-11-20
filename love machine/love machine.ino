@@ -53,9 +53,10 @@ previous1=current1;
 previous2=current2;
 // get the new value while working
 current1= analogRead (sensor1);
+Serial.println(current1);
 current2= analogRead (sensor2);
 //while working, light up a random light
-if ( current1-previous1 <300 && current2-previous2 <300) {  
+if ( current1-previous1 >200 && current2-previous2 >200) {  
      current1=1;
      current2=1;
      digitalWrite(randomNum,HIGH);
